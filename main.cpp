@@ -3,6 +3,8 @@
 #include <fstream>
 using namespace std;
 
+// belum final
+
 struct makanan {
     
    string menumkn[14] = {
