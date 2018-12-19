@@ -4,22 +4,7 @@
 using namespace std;
 
 struct makanan {
-    /*
-    int nasi = 4000;
-    int ayam = 6000;
-    int rendang = 7000;
-    int perkedel = 3000;
-    int tahu = 2000;
-    int tempe = 2000;
-    int kikil = 4000;
-    int telur_dadar = 3000;
-    int telur_bulat = 2500;
-    int kerupuk = 1000;
-    int esteh = 3000;
-    int esjeruk = 3000;
-    int aires = 1000;
-    int airputih = 0;History
-    */
+    
    string menumkn[14] = {
        "nasi", "ayam", "rendang", "perkedel", "tahu", "tempe", "kikil", "t.dadar", "t.bulat",
        "kerupuk", "es teh", "es jeruk", "air es", "air putih"
