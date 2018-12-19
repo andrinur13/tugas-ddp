@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 using namespace std;
 
 struct makanan {
@@ -17,8 +18,12 @@ struct makanan {
     int esteh = 3000;
     int esjeruk = 3000;
     int aires = 1000;
-    int airputih = 0;
+    int airputih = 0;History
     */
+   string menumkn[14] = {
+       "nasi", "ayam", "rendang", "perkedel", "tahu", "tempe", "kikil", "t.dadar", "t.bulat",
+       "kerupuk", "es teh", "es jeruk", "air es", "air putih"
+   };
 
     int menupilihan[14] = {
         4000, 6000, 7000, 3000, 2000, 2000, 4000, 3000, 2500, 1000, 3000, 3000, 1000, 0
@@ -26,7 +31,12 @@ struct makanan {
 
 }mkn;
 
-void menu() {
+void menu();
+
+void bayar() {
+    ofstream data;
+    data.open("log.txt", ios::app);
+
     awal:
     system("clear");
     cout << "===== KASIR RM. PADANG =====" << endl;
@@ -36,7 +46,7 @@ void menu() {
     cout << "3. Rendang" << endl;
     cout << "4. Perkedal" << endl;
     cout << "5. Tahu" << endl;
-    cout << "6.  cin >> jumlah=1;Tempe" << endl;
+    cout << "6. Tempe" << endl;
     cout << "7. Kikil" << endl;
     cout << "8. Telur Dadar" << endl;
     cout << "9. Telur Bulat" << endl;
@@ -48,28 +58,69 @@ void menu() {
     cout << endl;
     cout << "0. -- Sudah --" << endl;
 
-    bool sudah = false;
+    bool sudah = true;
     int pilih;
     int total=0;
     int jumlah;
     int bayar;
     char ulang;
 
-    while(!sudah) {
+    data << "{" << endl;
+
+    while(sudah) {
         cout << "makan : "; cin >> pilih;
         if(pilih == 0) {
             break;
         }
         total += mkn.menupilihan[(pilih-1)];
+        data << mkn.menumkn[(pilih-1)] << " ------------ " << mkn.menupilihan[(pilih-1)] << endl; 
     }
+
+    data << endl;
+
     cout << endl;
     cout << "Total    : " << total << endl;
     cout << "Bayar    : "; cin >> bayar;
     cout << "Kembalian: " << bayar - total << endl;
     cout << endl;
     cout << "Ulangi ? "; cin >> ulang;
+
+    data << "Total   : " << total << endl;
+    data << "}" << endl << endl;
+
+    data.close();
+
     if (ulang == 'y' || ulang == 'Y') {
         goto awal;
+    } else if (ulang == 'n' || ulang == 'N') {
+        menu();
+    }
+
+}
+
+void menu() {
+    system("clear");
+    cout << "===== KASIR RM. PADANG =====" << endl;
+    cout << endl << endl;
+    cout << "1. Bayar" << endl;
+    cout << "2. History" << endl;
+    cout << "3. Exit" << endl;
+    cout << "Pilih : ";
+    int pilih;
+    cin >> pilih;
+
+    switch(pilih) {
+        case 1:
+        bayar();
+        break;
+
+        case 2:
+       // history();
+        break;
+
+        case 3:
+       system("clear");
+        break;
     }
 }
 
@@ -100,27 +151,7 @@ void login() {
     }
 }
 
-main() {
-    cout << "===== KASIR RM. PADANG =====" << endl;
-    cout << endl << endl;
-    cout << "1. Login" << endl;
-    cout << "2. Exit" << endl;
-    cout << "3. History" << endl;
-    cout << "Pilih : ";
-    int pilih;
-    cin >> pilih;
-
-    switch(pilih) {
-        case 1:
-        login();
-        break;
-
-        case 2:
-        system("exit");
-        break;
-
-        case 3:
-        break;
-
-    }
+main(int argc, char const *argv[])
+{
+    login();
 }
