@@ -21,10 +21,10 @@ struct makanan {
 void menu();
 
 void bayar() {
+    awal:
     ofstream data;
     data.open("log.txt", ios::app);
-
-    awal:
+    
     system("clear");
     cout << "===== KASIR RM. PADANG =====" << endl;
     cout << endl;
