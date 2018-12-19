@@ -3,10 +3,10 @@
 #include <fstream>
 using namespace std;
 
-// belum final
+// belum final 2
 
 struct makanan {
-    
+
    string menumkn[14] = {
        "nasi", "ayam", "rendang", "perkedel", "tahu", "tempe", "kikil", "t.dadar", "t.bulat",
        "kerupuk", "es teh", "es jeruk", "air es", "air putih"
@@ -24,7 +24,7 @@ void bayar() {
     awal:
     ofstream data;
     data.open("log.txt", ios::app);
-    
+
     system("clear");
     cout << "===== KASIR RM. PADANG =====" << endl;
     cout << endl;
@@ -60,7 +60,7 @@ void bayar() {
             break;
         }
         total += mkn.menupilihan[(pilih-1)];
-        data << mkn.menumkn[(pilih-1)] << " ------------ " << mkn.menupilihan[(pilih-1)] << endl; 
+        data << mkn.menumkn[(pilih-1)] << " ------------ " << mkn.menupilihan[(pilih-1)] << endl;
     }
 
     data << endl;
