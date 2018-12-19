@@ -3,7 +3,7 @@
 #include <fstream>
 using namespace std;
 
-// belum final 2
+//InshaAllah final
 
 struct makanan {
 
@@ -26,7 +26,7 @@ void bayar() {
     data.open("log.txt", ios::app);
 
     system("clear");
-    cout << "===== KASIR RM. PADANG =====" << endl;
+    cout << "========== KASIR RM. PADANG ==========" << endl;
     cout << endl;
     cout << "1. Nasi" << endl;
     cout << "2. Ayam" << endl;
@@ -87,7 +87,7 @@ void bayar() {
 
 void menu() {
     system("clear");
-    cout << "===== KASIR RM. PADANG =====" << endl;
+    cout << "========== KASIR RM. PADANG ==========" << endl;
     cout << endl << endl;
     cout << "1. Bayar" << endl;
     cout << "2. Exit" << endl;
@@ -120,7 +120,7 @@ void login() {
     string passwordAuth = "admin";
 
     login:
-    cout << "===== KASIR RM. PADANG =====" << endl;
+    cout << "========== KASIR RM. PADANG ==========" << endl;
     cout << "User     : "; cin >> user;
     password:
     cout << "Password : "; cin >> password;
