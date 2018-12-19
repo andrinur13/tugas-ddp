@@ -90,9 +90,9 @@ void menu() {
     cout << "===== KASIR RM. PADANG =====" << endl;
     cout << endl << endl;
     cout << "1. Bayar" << endl;
-    cout << "2. History" << endl;
-    cout << "3. Exit" << endl;
+    cout << "2. Exit" << endl;
     cout << "Pilih : ";
+    pilih:
     int pilih;
     cin >> pilih;
 
@@ -102,21 +102,22 @@ void menu() {
         break;
 
         case 2:
-       // history();
+        system("clear");
         break;
 
-        case 3:
-       system("clear");
-        break;
+        default:
+        cout << "Salah Pilih" << endl;
+        goto pilih;
     }
 }
 
 void login() {
+
+    system("clear");
+
     string user, password;
     string userAuth = "admin";
     string passwordAuth = "admin";
-
-    system("clear");
 
     login:
     cout << "===== KASIR RM. PADANG =====" << endl;
